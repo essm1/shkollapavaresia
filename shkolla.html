@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="sq">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shkolla Pavarësia - Historiku</title>
 
 <style>
@@ -35,9 +37,7 @@ nav {
     font-size: 14px;
     margin: 0 5px;
 }
-.contact-info a:hover {
-    opacity: 0.8;
-}
+.contact-info a:hover { opacity: 0.8; }
 
 /* Social icons */
 .social-icons {
@@ -123,11 +123,13 @@ nav {
 }
 .slider {
     display: flex;
-    transition: transform .6s ease;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
 }
+.slider::-webkit-scrollbar { display: none; } /* fsheh scroll në Chrome/Safari */
 .slide {
-    min-width: 20%;
-    padding: 10px;
+    flex: 0 0 20%;
     box-sizing: border-box;
 }
 .slide img {
@@ -139,20 +141,6 @@ nav {
     transition: transform .3s;
 }
 .slide img:hover { transform: scale(1.1); }
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #c40000;
-    color: white;
-    border: none;
-    font-size: 22px;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 6px;
-}
-.prev { left: 5px; }
-.next { right: 5px; }
 
 /* FOOTER */
 footer {
@@ -165,7 +153,7 @@ footer {
 
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
-    .slide { min-width: 33.33%; }
+    .slide { flex: 0 0 33.33%; }
 }
 
 @media screen and (max-width: 768px) {
@@ -182,17 +170,13 @@ footer {
         gap: 10px;
     }
     .menu-items.show { display: flex; }
-
     .hamburger { display: block; }
-
     nav { flex-wrap: wrap; }
-
-    .slider { gap: 10px; }
-    .slide { min-width: 50%; }
+    .slide { flex: 0 0 50%; }
 }
 
 @media screen and (max-width: 480px) {
-    .slide { min-width: 100%; }
+    .slide { flex: 0 0 100%; }
     .hero h1 { font-size: 26px; }
     .hero p { font-size: 16px; }
     .history h2 { font-size: 24px; }
@@ -255,7 +239,6 @@ footer {
 
 <!-- SLIDER FOTO -->
 <div class="slider-container">
-    <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
     <div class="slider" id="slider">
         <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPaNz8AZH_w8iYXmBtUPNVWiByMsYAPy-VmQ&s"></div>
         <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8I5y2-HVCkXFZltyj77WYWleWV2XEGaBjyw&s"></div>
@@ -266,7 +249,6 @@ footer {
         <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFQTGxqr7WEDMj2hUMxFPPdX0utOkYGbGZQ&s"></div>
         <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgjbyHOWSxrSnKTIoDjGypAGoQ-4iy_sceg&s"></div>
     </div>
-    <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
 </div>
 
 <footer>
@@ -274,23 +256,6 @@ footer {
 </footer>
 
 <script>
-// SLIDER JS (LOOP INFINITE)
-let slider = document.getElementById("slider");
-let index = 0;
-
-function moveSlide(step){
-    let slides = document.querySelectorAll(".slide").length;
-    index += step;
-
-    if(index >= slides){ index = 0; }
-    if(index < 0){ index = slides - 1; }
-
-    slider.style.transform = "translateX(" + (-index * 20) + "%)";
-}
-
-// AUTO SLIDE
-setInterval(() => { moveSlide(1); }, 4000);
-
 // HAMBURGER MENU
 function toggleMenu(){
     document.querySelector(".menu-items").classList.toggle("show");
