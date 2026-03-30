@@ -6,7 +6,23 @@
 <title>Shkolla Pavarësia - Historiku</title>
 <style>
 /* RESET & BODY */
-body, html { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f8f8f8; scroll-behavior: smooth; min-height: 100vh; display: flex; flex-direction: column; }
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    scroll-behavior: smooth;
+    min-height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN CONTENT FLEX */
+main {
+    flex: 1; /* kjo bën që footer të shkojë gjithmonë në fund */
+}
 
 /* NAVBAR */
 nav {
@@ -44,7 +60,7 @@ nav {
 .hero p { margin-top: 10px; font-size: 18px; }
 
 /* HISTORIKU */
-.history { padding: 50px 20px; text-align: center; flex: 1; }
+.history { padding: 50px 20px; text-align: center; }
 .history h2 { color: #c40000; font-size: 28px; margin-bottom: 20px; }
 .history p { font-size: 16px; line-height: 1.6; max-width: 800px; margin: 0 auto 40px auto; }
 
@@ -93,7 +109,6 @@ footer {
     color: white;
     text-align: center;
     padding: 18px;
-    margin-top: auto;
 }
 
 /* RESPONSIVE */
@@ -158,34 +173,36 @@ footer {
     </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Historiku i Shkollës Pavarësia</h1>
-    <p>20 vite edukim dhe zhvillim për brezat e rinj</p>
-</div>
-
-<!-- HISTORIKU -->
-<div class="history">
-    <h2>Rreth Historikut</h2>
-    <p>Shkolla Pavarësia u themelua 20 vjet më parë me synimin për të ofruar arsim cilësor për fëmijët e Durrësit dhe zonave përreth. Që nga themelimi i saj, shkolla ka kaluar nëpër periudha të ndryshme zhvillimi dhe rritjeje, duke u shndërruar në një qendër të njohur arsimore për mësimdhënie inovative dhe programe të pasura edukative.</p>
-    <p>Sot, shkolla ofron arsim fillor, të mesëm të ulët dhe të lartë, si dhe programe digjitale dhe pasdite të specializuara, duke ruajtur gjithmonë traditën dhe vlerat e saj edukative.</p>
-</div>
-
-<!-- SLIDER FOTO -->
-<div class="slider-container">
-    <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-    <div class="slider" id="slider">
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPaNz8AZH_w8iYXmBtUPNVWiByMsYAPy-VmQ&s" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8I5y2-HVCkXFZltyj77WYWleWV2XEGaBjyw&s" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_y3N5VKC15v4yFf20NL1-WEj3e5G10q4SA&s" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NuCSMmZjZTyxSsAvLAsVS1sjIT4gXS3NqA&s" alt=""></div>
-        <div class="slide"><img src="https://durreslajm.al/app/uploads/2024/05/WhatsApp-Image-2024-05-24-at-15.26.34.jpeg" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdTJepsO5ivdQt2P2OD3x5F9bQ_YiHa2N0sg&s" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFQTGxqr7WEDMj2hUMxFPPdX0utOkYGbGZQ&s" alt=""></div>
-        <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgjbyHOWSxrSnKTIoDjGypAGoQ-4iy_sceg&s" alt=""></div>
+<main>
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Historiku i Shkollës Pavarësia</h1>
+        <p>20 vite edukim dhe zhvillim për brezat e rinj</p>
     </div>
-    <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
-</div>
+
+    <!-- HISTORIKU -->
+    <div class="history">
+        <h2>Rreth Historikut</h2>
+        <p>Shkolla Pavarësia u themelua 20 vjet më parë me synimin për të ofruar arsim cilësor për fëmijët e Durrësit dhe zonave përreth. Që nga themelimi i saj, shkolla ka kaluar nëpër periudha të ndryshme zhvillimi dhe rritjeje, duke u shndërruar në një qendër të njohur arsimore për mësimdhënie inovative dhe programe të pasura edukative.</p>
+        <p>Sot, shkolla ofron arsim fillor, të mesëm të ulët dhe të lartë, si dhe programe digjitale dhe pasdite të specializuara, duke ruajtur gjithmonë traditën dhe vlerat e saj edukative.</p>
+    </div>
+
+    <!-- SLIDER FOTO -->
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+        <div class="slider" id="slider">
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPaNz8AZH_w8iYXmBtUPNVWiByMsYAPy-VmQ&s" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8I5y2-HVCkXFZltyj77WYWleWV2XEGaBjyw&s" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_y3N5VKC15v4yFf20NL1-WEj3e5G10q4SA&s" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NuCSMmZjZTyxSsAvLAsVS1sjIT4gXS3NqA&s" alt=""></div>
+            <div class="slide"><img src="https://durreslajm.al/app/uploads/2024/05/WhatsApp-Image-2024-05-24-at-15.26.34.jpeg" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdTJepsO5ivdQt2P2OD3x5F9bQ_YiHa2N0sg&s" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFQTGxqr7WEDMj2hUMxFPPdX0utOkYGbGZQ&s" alt=""></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgjbyHOWSxrSnKTIoDjGypAGoQ-4iy_sceg&s" alt=""></div>
+        </div>
+        <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+    </div>
+</main>
 
 <footer>
     © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
