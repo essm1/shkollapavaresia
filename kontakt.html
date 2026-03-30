@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shkolla Pavarësia - Kontakt</title>
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* NAVBAR */
+nav {
+    background: #c40000;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+/* Social icons */
+.social-icons {
+    margin-top: 5px;
+}
+
+.social-icons a {
+    display: inline-block;
+}
+
+.social-icons img {
+    height: 20px;
+    margin: 0 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* LOGO */
+.logo img {
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* MENU ITEMS */
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.menu-items a:hover {
+    opacity: 0.8;
+}
+
+/* HAMBURGER BUTTON */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* CONTACT FORM */
+.contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.contact-container h2 {
+    color: #c40000;
+    text-align: center;
+}
+
+.contact-container label {
+    display: block;
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+.contact-container input,
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.contact-container button {
+    padding: 12px 20px;
+    background: #c40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact-container button:hover {
+    background: #a00000;
+}
+footer {
+    background: #900000;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background: #c40000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu-items.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu-items a {
+        margin: 10px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR IDENTIKE -->
+<nav>
+    <div class="contact-info">
+        📞 <a href="https://wa.me/355674375818" target="_blank">+355 67 437 5818</a> |
+        ✉️ <a href="mailto:pavaresia.shkolla@gmail.com">pavaresia.shkolla@gmail.com</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/shkolla_pavaresia" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/shkollaPavaresia" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook">
+            </a>
+        </div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="C:\Users\User\OneDrive\Desktop\website\images\Picture1.png" alt="Logo e Shkollës">
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- MENU ITEMS -->
+    <div class="menu-items">
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/new%202.html#">Kreu</a>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/shkolla.html">Shkolla</a>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html">Rreth Nesh</a>
+        <a href="#">Kontakt</a>
+    </div>
+</nav>
+
+<!-- FORMULAR KONTAKTI -->
+<div class="contact-container">
+    <h2>Na Kontaktoni</h2>
+    
+    <!-- OPINION 1: Përdor Google Forms -->
+    <form action="https://docs.google.com/forms/d/e/PUT_YOUR_FORM_ID_HERE/formResponse" method="POST" target="_blank">
+        <label>Emri</label>
+        <input type="text" name="entry.1234567890" placeholder="Shkruaj emrin" required>
+
+        <label>Mbiemri</label>
+        <input type="text" name="entry.0987654321" placeholder="Shkruaj mbiemrin" required>
+
+        <label>Email</label>
+        <input type="email" name="entry.1122334455" placeholder="Shkruaj emailin" required>
+		
+		<label>Numer Telefoni </label>
+		<input type="phone" name="entry.1234567890" placeholder="Shkruaj numrin e telefonit" required>
+		
+
+        <label>Mesazhi / Komenti</label>
+        <textarea name="entry.6677889900" placeholder="Shkruaj mesazhin tuaj" rows="5" required></textarea>
+
+        <button type="submit">Dërgo</button>
+    </form>
+
+
+	<p style="text-align:center; margin-top:15px; font-size:14px;"> Kontaktoni
+	në numrat e mëposhtëm <br>
+	Drejtoria: <a href="https://wa.me/355698274512" target="_blank">+355 68 827 4512</a> <br>
+
+	</p>
+</div>
+<footer>
+    © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
+</footer>
+<script>
+function toggleMenu() {
+    const menu = document.querySelector('.menu-items');
+    menu.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>

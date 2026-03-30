@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shkolla 9 dhe 12 vjeçare Pavarësia</title>
+
+<style>
+/* BODY */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* NAVBAR */
+nav {
+    background: #c40000;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Contact Info */
+.contact-info {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 5px;
+}
+
+.contact-info a:hover {
+    opacity: 0.8;
+}
+
+/* Social icons */
+.social-icons {
+    margin-top: 5px;
+}
+
+.social-icons img {
+    height: 20px;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* LOGO */
+.logo img {
+    height: 50px;
+}
+
+/* MENU ITEMS */
+.menu-items a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.menu-items a:hover {
+    opacity: 0.8;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    background-image: url("https://durreslajm.al/app/uploads/2024/05/WhatsApp-Image-2024-05-24-at-15.14.55.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 40px 20px; 
+    height: 200px;      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 28px;  
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* CONTAINER */
+.container {
+    padding: 50px;
+    text-align: center;
+}
+
+.container h2 {
+    color: #c40000;
+    font-size: 28px;
+}
+
+/* CARDS / BUTONAT */
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-top: 6px solid #c40000;
+}
+
+button, .btn {
+    padding: 10px 18px;
+    background: #c40000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background: #a00000;
+}
+
+/* FOOTER */
+footer {
+    background: #900000;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        background: #c40000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .menu-items.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu-items a {
+        margin: 10px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="contact-info">
+        📞 <a href="https://wa.me/355674375818" target="_blank">+355 67 437 5818</a> |
+        ✉️ <a href="mailto:pavaresia.shkolla@gmail.com">pavaresia.shkolla@gmail.com</a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/shkolla_pavaresia" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook">
+            </a>
+        </div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="C:\Users\User\OneDrive\Desktop\website\images\Picture1.png" alt="Logo e Shkollës">
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <!-- MENU ITEMS -->
+    <div class="menu-items">
+        <a href="#">Kreu</a>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/shkolla.html">Shkolla</a>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html">Rreth Nesh</a>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/kontakt.html">Kontakt</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Mirë se vini në shkollën Pavarësia</h1>
+    <p>NON SCHOLAE SED VITAE DISCIMUS</p>
+</div>
+
+<!-- BUTONAT PËR RRETH NESH -->
+<div class="container">
+    <h2> Çfarë ofrojmë </h2>
+
+    <div class="card">
+        <h3>Arsim Fillor</h3>
+        <p>Klasa 1-5</p>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html#fillor" class="btn">Shiko klasat dhe kurrikulën</a>
+    </div>
+
+    <div class="card">
+        <h3>Arsim i Mesëm i Ulët</h3>
+        <p>Klasa 6-9</p>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html#mesem-ulet" class="btn">Shiko klasat dhe kurrikulën</a>
+    </div>
+
+    <div class="card">
+        <h3>Arsim i Mesëm i Lartë</h3>
+        <p>Klasa 10-12</p>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html#mesem-larte" class="btn">Shiko klasat dhe kurrikulën</a>
+    </div>
+    
+    <div class="card">
+        <h3>Shkolla Digjitale</h3>
+        <p>Kursi i Teknologjisë</p>
+        <a href="file:///C:/Users/User/OneDrive/Desktop/website/rreth%20nesh.html#digjitale" class="btn">Shiko klasat dhe kurrikulën</a>
+    </div>
+</div>
+
+<footer>
+    © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
+</footer>
+
+<script>
+function toggleMenu() {
+    const menu = document.querySelector('.menu-items');
+    menu.classList.toggle('show');
+}
+</script>
+
+</body>
+</html>
