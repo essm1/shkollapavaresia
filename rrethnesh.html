@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Rreth Nesh - Shkolla Pavarësia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 /* BODY */
@@ -22,6 +23,7 @@ nav {
     position:sticky;
     top:0;
     z-index:1000;
+    flex-wrap: wrap;
 }
 
 /* Contact Info */
@@ -170,12 +172,30 @@ footer {
 
 /* RESPONSIVE */
 @media screen and (max-width:768px){
-    .menu-items { display:none; flex-direction:column; background:#c40000; position:absolute; top:60px; right:0; width:200px; padding:10px; border-radius:5px; }
+    .menu-items {
+        display:none;
+        flex-direction:column;
+        background:#c40000;
+        position:absolute;
+        top:60px;
+        right:0;
+        width:200px;
+        padding:10px;
+        border-radius:5px;
+    }
     .menu-items.show { display:flex; }
     .hamburger { display:block; }
+
+    /* Edu sections responsive */
     .edu-section { flex-direction:column; text-align:center; }
+    .edu-section img { width:100%; height:auto; }
+
+    /* Slider responsive */
     .slide { min-width:50%; }
-    .gallery img { width:100%; height:auto; }
+
+    /* Hero font resize */
+    .hero h1 { font-size:28px; }
+    .hero p { font-size:16px; }
 }
 </style>
 </head>
@@ -198,7 +218,7 @@ footer {
     </div>
 
     <div class="logo">
- <img src="images/Picture1.png" alt="Logo e Shkollës">
+        <img src="images/Picture1.png" alt="Logo e Shkollës">
     </div>
 
     <div class="menu-items">
@@ -213,88 +233,88 @@ footer {
 
 <!-- HERO -->
 <div class="hero">
-<h1>Rreth Nesh</h1>
-<p>Shkolla Pavarësia - Edukim për çdo moshë</p>
+    <h1>Rreth Nesh</h1>
+    <p>Shkolla Pavarësia - Edukim për çdo moshë</p>
 </div>
 
 <!-- SLIDER FOTO -->
 <div class="section">
-<h2>Momentet nga Shkolla Jonë</h2>
-<div class="slider-container">
-<button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-<div class="slider" id="slider">
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPaNz8AZH_w8iYXmBtUPNVWiByMsYAPy-VmQ&s"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8I5y2-HVCkXFZltyj77WYWleWV2XEGaBjyw&s"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_y3N5VKC15v4yFf20NL1-WEj3e5G10q4SA&s"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NuCSMmZjZTyxSsAvLAsVS1sjIT4gXS3NqA&s"></div>
-<div class="slide"><img src="https://durreslajm.al/app/uploads/2024/05/WhatsApp-Image-2024-05-24-at-15.26.34.jpeg"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdTJepsO5ivdQt2P2OD3x5F9bQ_YiHa2N0sg&s"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFQTGxqr7WEDMj2hUMxFPPdX0utOkYGbGZQ&s"></div>
-<div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgjbyHOWSxrSnKTIoDjGypAGoQ-4iy_sceg&s"></div>
-</div>
-<button class="slider-btn next" onclick="moveSlide(1)">❯</button>
-</div>
+    <h2>Momentet nga Shkolla Jonë</h2>
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+        <div class="slider" id="slider">
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPaNz8AZH_w8iYXmBtUPNVWiByMsYAPy-VmQ&s"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8I5y2-HVCkXFZltyj77WYWleWV2XEGaBjyw&s"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7_y3N5VKC15v4yFf20NL1-WEj3e5G10q4SA&s"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NuCSMmZjZTyxSsAvLAsVS1sjIT4gXS3NqA&s"></div>
+            <div class="slide"><img src="https://durreslajm.al/app/uploads/2024/05/WhatsApp-Image-2024-05-24-at-15.26.34.jpeg"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdTJepsO5ivdQt2P2OD3x5F9bQ_YiHa2N0sg&s"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFQTGxqr7WEDMj2hUMxFPPdX0utOkYGbGZQ&s"></div>
+            <div class="slide"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmgjbyHOWSxrSnKTIoDjGypAGoQ-4iy_sceg&s"></div>
+        </div>
+        <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+    </div>
 </div>
 
 <!-- EDU SECTIONS -->
 <div class="section">
-<h2 id="fillor">Arsimi Fillor (Klasa 1-5)</h2>
-<div class="edu-section">
-<img src="images/foto_fillor.jpg">
-<div class="edu-text">
-<h3>Zhvillim Bazë dhe Formim Karakteri</h3>
-<p>
-Në Shkollën Pavarësia besojmë se edukimi nuk ka të bëjë vetëm me njohuritë akademike, por edhe me formimin e karakterit. Përmes aktiviteteve bashkëpunuese dhe projekteve praktike nxënësit zhvillojnë vetëbesimin, përgjegjësinë dhe aftësinë për të bashkëpunuar me të tjerët. Gjithashtu ofrojmë AfterSchool me aktivitete si programim, robotikë, edukim financiar etj.
-</p>
-</div>
-</div>
+    <h2 id="fillor">Arsimi Fillor (Klasa 1-5)</h2>
+    <div class="edu-section">
+        <img src="images/foto_fillor.jpg">
+        <div class="edu-text">
+            <h3>Zhvillim Bazë dhe Formim Karakteri</h3>
+            <p>
+                Në Shkollën Pavarësia besojmë se edukimi nuk ka të bëjë vetëm me njohuritë akademike, por edhe me formimin e karakterit. Përmes aktiviteteve bashkëpunuese dhe projekteve praktike nxënësit zhvillojnë vetëbesimin, përgjegjësinë dhe aftësinë për të bashkëpunuar me të tjerët. Gjithashtu ofrojmë AfterSchool me aktivitete si programim, robotikë, edukim financiar etj.
+            </p>
+        </div>
+    </div>
 
-<h2 id="mesem-ulet">Arsimi i Mesëm i Ulët (Klasa 6-9)</h2>
-<div class="edu-section">
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
-<div class="edu-text">
-<h3>Thellim i Njohurive</h3>
-<p>
-Përgatitje akademike më e avancuar dhe zhvillim i mendimit kritik. Nxënësit mësojnë bazën kurrikulare të MASR dhe marrin pjesë në aktivitete praktike: programim, robotikë, edukim financiar.
-</p>
-</div>
-</div>
+    <h2 id="mesem-ulet">Arsimi i Mesëm i Ulët (Klasa 6-9)</h2>
+    <div class="edu-section">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+        <div class="edu-text">
+            <h3>Thellim i Njohurive</h3>
+            <p>
+                Përgatitje akademike më e avancuar dhe zhvillim i mendimit kritik. Nxënësit mësojnë bazën kurrikulare të MASR dhe marrin pjesë në aktivitete praktike: programim, robotikë, edukim financiar.
+            </p>
+        </div>
+    </div>
 
-<h2 id="mesem-larte">Arsimi i Mesëm i Lartë (Klasa 10-12)</h2>
-<div class="edu-section">
-<img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
-<div class="edu-text">
-<h3>Përgatitje për Universitet</h3>
-<p>
-Ky cikël është më i rëndësishmi për formimin e individit. Ofron staf pedagogjik të mirë, metodika bashkëkohore dhe fokus në Edukimin në Karrierë. Nxënësit marrin pjesë në Hackathon, Ideathon, aktivitete vullnetare dhe internship-e.
-</p>
-</div>
-</div>
+    <h2 id="mesem-larte">Arsimi i Mesëm i Lartë (Klasa 10-12)</h2>
+    <div class="edu-section">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1">
+        <div class="edu-text">
+            <h3>Përgatitje për Universitet</h3>
+            <p>
+                Ky cikël është më i rëndësishmi për formimin e individit. Ofron staf pedagogjik të mirë, metodika bashkëkohore dhe fokus në Edukimin në Karrierë. Nxënësit marrin pjesë në Hackathon, Ideathon, aktivitete vullnetare dhe internship-e.
+            </p>
+        </div>
+    </div>
 
-<h2 id="digjitale">Shkolla Digjitale</h2>
-<div class="edu-section">
-<img class="digjitale-img" src="https://kosovajob.com/admin/companyLogos/1616601919.png">
-<div class="edu-text">
-<h3>Teknologji & Inovacion</h3>
-<p>Kurse programimi, robotikë dhe aftësi digjitale për nxënësit tanë.</p>
-</div>
-</div>
+    <h2 id="digjitale">Shkolla Digjitale</h2>
+    <div class="edu-section">
+        <img class="digjitale-img" src="https://kosovajob.com/admin/companyLogos/1616601919.png">
+        <div class="edu-text">
+            <h3>Teknologji & Inovacion</h3>
+            <p>Kurse programimi, robotikë dhe aftësi digjitale për nxënësit tanë.</p>
+        </div>
+    </div>
 
-<h2 id="steam">STEAM & Edukim Financiar</h2>
-<div class="edu-section">
-<img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
-<div class="edu-text">
-<h3>Mësim Praktik për të Ardhmen</h3>
-<p>
-Programi STEAM ndihmon nxënësit të zhvillojnë kreativitet, logjikë dhe aftësi për zgjidhje problemesh reale. Përmes projekteve praktike mësojnë gjithashtu bazat e edukimit financiar si kursimi dhe menaxhimi i parave.
-</p>
-</div>
-</div>
+    <h2 id="steam">STEAM & Edukim Financiar</h2>
+    <div class="edu-section">
+        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0">
+        <div class="edu-text">
+            <h3>Mësim Praktik për të Ardhmen</h3>
+            <p>
+                Programi STEAM ndihmon nxënësit të zhvillojnë kreativitet, logjikë dhe aftësi për zgjidhje problemesh reale. Përmes projekteve praktike mësojnë gjithashtu bazat e edukimit financiar si kursimi dhe menaxhimi i parave.
+            </p>
+        </div>
+    </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-© 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
+    © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
 </footer>
 
 <script>
@@ -307,21 +327,14 @@ function moveSlide(step){
 
     index += step;
 
-    // LOOP FIX
-    if(index >= slides){
-        index = 0;
-    }
-    if(index < 0){
-        index = slides - 1;
-    }
+    if(index >= slides){ index = 0; }
+    if(index < 0){ index = slides - 1; }
 
     slider.style.transform = "translateX(" + (-index * 20) + "%)";
 }
 
 // AUTO SLIDE
-setInterval(() => { 
-    moveSlide(1); 
-}, 4000);
+setInterval(() => { moveSlide(1); }, 4000);
 
 // HAMBURGER MENU
 function toggleMenu(){
