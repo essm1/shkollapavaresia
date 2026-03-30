@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Shkolla Pavarësia - Kontakt</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 /* BODY */
@@ -21,6 +22,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 /* Contact Info */
@@ -132,6 +134,7 @@ nav {
 .contact-container button:hover {
     background: #a00000;
 }
+
 footer {
     background: #900000;
     color: white;
@@ -164,10 +167,6 @@ footer {
 
     .menu-items a {
         margin: 10px 0;
-    }
-
-    nav {
-        flex-wrap: wrap;
     }
 }
 </style>
@@ -211,7 +210,6 @@ footer {
 <div class="contact-container">
     <h2>Na Kontaktoni</h2>
     
-    <!-- OPINION 1: Përdor Google Forms -->
     <form action="https://docs.google.com/forms/d/e/PUT_YOUR_FORM_ID_HERE/formResponse" method="POST" target="_blank">
         <label>Emri</label>
         <input type="text" name="entry.1234567890" placeholder="Shkruaj emrin" required>
@@ -222,26 +220,25 @@ footer {
         <label>Email</label>
         <input type="email" name="entry.1122334455" placeholder="Shkruaj emailin" required>
 		
-		<label>Numer Telefoni </label>
+		<label>Numer Telefoni</label>
 		<input type="phone" name="entry.1234567890" placeholder="Shkruaj numrin e telefonit" required>
 		
-
         <label>Mesazhi / Komenti</label>
         <textarea name="entry.6677889900" placeholder="Shkruaj mesazhin tuaj" rows="5" required></textarea>
 
         <button type="submit">Dërgo</button>
     </form>
 
-
-	<p style="text-align:center; margin-top:15px; font-size:14px;"> Kontaktoni
-	në numrat e mëposhtëm <br>
-	Drejtoria: <a href="https://wa.me/355698274512" target="_blank">+355 68 827 4512</a> <br>
-
+	<p style="text-align:center; margin-top:15px; font-size:14px;">
+	Kontaktoni në numrat e mëposhtëm <br>
+	Drejtoria: <a href="https://wa.me/355698274512" target="_blank">+355 68 827 4512</a>
 	</p>
 </div>
+
 <footer>
     © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
 </footer>
+
 <script>
 function toggleMenu() {
     const menu = document.querySelector('.menu-items');
