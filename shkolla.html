@@ -71,20 +71,34 @@ nav {
     margin: 0 auto 50px auto;
     max-width: 1100px;
 }
+
+/* Track */
 .slider {
     display: flex;
     transition: transform 0.6s ease;
+    will-change: transform;
 }
-.slide { min-width: 20%; padding: 5px; box-sizing: border-box; }
+
+/* Slides */
+.slide {
+    min-width: 20%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Images */
 .slide img {
     width: 100%;
     height: 160px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
-.slide img:hover { transform: scale(1.05); }
+
+.slide img:hover {
+    transform: scale(1.05);
+}
 
 /* SLIDER BUTTONS */
 .slider-btn {
@@ -99,9 +113,45 @@ nav {
     cursor: pointer;
     border-radius: 6px;
     z-index: 2;
+    opacity: 0.9;
+    transition: 0.3s;
 }
+
+.slider-btn:hover {
+    opacity: 1;
+}
+
 .prev { left: 5px; }
 .next { right: 5px; }
+
+/* ===================== */
+/* RESPONSIVE (KRITIKE) */
+/* ===================== */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .slide {
+        min-width: 33.33%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .slide {
+        min-width: 50%;
+    }
+}
+
+/* Small mobile */
+@media screen and (max-width: 480px) {
+    .slide {
+        min-width: 100%;
+    }
+
+    .slide img {
+        height: 200px;
+    }
+}
 
 /* FOOTER */
 footer {
@@ -209,20 +259,42 @@ footer {
 </footer>
 
 <script>
-// SLIDER JS
+// SLIDER
 let slider = document.getElementById("slider");
 let index = 0;
-const slides = document.querySelectorAll(".slide");
 
+// Sa slide shfaqen sipas ekranit
+function getVisibleSlides(){
+    if(window.innerWidth <= 480) return 1;
+    if(window.innerWidth <= 768) return 2;
+    if(window.innerWidth <= 1024) return 3;
+    return 5;
+}
+
+// Lëvizja e slider-it
 function moveSlide(step){
+    const slides = document.querySelectorAll(".slide").length;
+    const visible = getVisibleSlides();
+
     index += step;
-    if(index >= slides.length) index = 0;
-    if(index < 0) index = slides.length - 1;
-    slider.style.transform = "translateX(" + (-index * 20) + "%)";
+
+    if(index > slides - visible) index = 0;
+    if(index < 0) index = slides - visible;
+
+    const movePercent = 100 / visible;
+    slider.style.transform = "translateX(" + (-index * movePercent) + "%)";
 }
 
 // AUTO SLIDE
-setInterval(() => moveSlide(1), 4000);
+setInterval(() => {
+    moveSlide(1);
+}, 4000);
+
+// RESET kur ndryshon madhësia e ekranit
+window.addEventListener("resize", () => {
+    index = 0;
+    moveSlide(0);
+});
 
 // HAMBURGER MENU
 function toggleMenu(){
