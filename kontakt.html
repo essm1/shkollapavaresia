@@ -210,24 +210,24 @@ footer {
 <div class="contact-container">
     <h2>Na Kontaktoni</h2>
     
-    <form action="https://docs.google.com/forms/d/e/PUT_YOUR_FORM_ID_HERE/formResponse" method="POST" target="_blank">
-        <label>Emri</label>
-        <input type="text" name="entry.1234567890" placeholder="Shkruaj emrin" required>
+   <form action="send.php" method="POST">
+  <label>Emri:</label>
+  <input type="text" name="emri" placeholder="Shkruani emrin tuaj" required><br>
 
-        <label>Mbiemri</label>
-        <input type="text" name="entry.0987654321" placeholder="Shkruaj mbiemrin" required>
+  <label>Mbiemri:</label>
+  <input type="text" name="mbiemri" placeholder="Shkruani mbiemrin tuaj" required><br>
 
-        <label>Email</label>
-        <input type="email" name="entry.1122334455" placeholder="Shkruaj emailin" required>
-		
-		<label>Numer Telefoni</label>
-		<input type="phone" name="entry.1234567890" placeholder="Shkruaj numrin e telefonit" required>
-		
-        <label>Mesazhi / Komenti</label>
-        <textarea name="entry.6677889900" placeholder="Shkruaj mesazhin tuaj" rows="5" required></textarea>
+  <label>Email:</label>
+  <input type="email" name="email" placeholder="Shkruani emailin tuaj" required><br>
 
-        <button type="submit">Dërgo</button>
-    </form>
+  <label>Numër Telefoni:</label>
+  <input type="text" name="telefoni" placeholder="Shkruani numrin tuaj"><br>
+
+  <label>Mesazhi / Komenti:</label>
+  <textarea name="mesazhi" placeholder="Shkruani mesazhin tuaj" required></textarea><br>
+
+  <button type="submit">Dërgo</button>
+</form>
 
 	<p style="text-align:center; margin-top:15px; font-size:14px;">
 	Kontaktoni në numrat e mëposhtëm <br>
