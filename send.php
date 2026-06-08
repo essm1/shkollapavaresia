@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mesazhi = $_POST['mesazhi'];
 
     // Vendos emailin e drejtuesit të shkollës këtu
-    $to = "drejtuesi@gmail.com";  
+    $to = "pavaresia.shkolla@gmail.com";  
     $subject = "Mesazh nga formulari i faqes";
     $body = "Emri: $emri\nMbiemri: $mbiemri\nEmail: $email\nTel: $telefoni\nMesazhi: $mesazhi";
 
