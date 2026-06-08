@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $emri = $_POST['emri'];
     $mbiemri = $_POST['mbiemri'];
@@ -6,17 +13,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $telefoni = $_POST['telefoni'];
     $mesazhi = $_POST['mesazhi'];
 
-    // Vendos emailin e drejtuesit të shkollës këtu
-    $to = "pavaresia.shkolla@gmail.com";  
-    $subject = "Mesazh nga formulari i faqes";
-    $body = "Emri: $emri\nMbiemri: $mbiemri\nEmail: $email\nTel: $telefoni\nMesazhi: $mesazhi";
+    $mail = new PHPMailer(true);
 
-    $headers = "From: $email";
+    try {
+        // Konfigurimi SMTP për Gmail
+        $mail->isSMTP();
+        $mail->Host       = 'pavaresia.shkolla@gmail.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'pavaresia.shkolla@gmail.com'; // vendos Gmail-in e drejtuesit
+        $mail->Password   = 'PASSWORD_APLIKACIONI'; // përdor "App Password" nga Gmail
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
 
-    if(mail($to, $subject, $body, $headers)){
+        // Dërguesi dhe marrësi
+        $mail->setFrom($email, $emri . " " . $mbiemri);
+        $mail->addAddress('pavaresia.shkolla@gmail.com'); // Gmail i drejtuesit
+
+        // Përmbajtja
+        $mail->isHTML(true);
+        $mail->Subject = 'Mesazh nga formulari i faqes';
+        $mail->Body    = "
+            <b>Emri:</b> $emri<br>
+            <b>Mbiemri:</b> $mbiemri<br>
+            <b>Email:</b> $email<br>
+            <b>Tel:</b> $telefoni<br>
+            <b>Mesazhi:</b> $mesazhi
+        ";
+
+        $mail->send();
         echo "Mesazhi u dërgua me sukses!";
-    } else {
-        echo "Gabim gjatë dërgimit të mesazhit.";
+    } catch (Exception $e) {
+        echo "Gabim gjatë dërgimit: {$mail->ErrorInfo}";
     }
 }
 ?>
