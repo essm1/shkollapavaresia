@@ -11,16 +11,11 @@
 
 <style>
 
-/* BODY */
-
 body {
-
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f8f8f8;
-
 }
-
 
 
 /* NAVBAR */
@@ -36,14 +31,10 @@ nav {
 
     position:sticky;
     top:0;
-
     z-index:1000;
 
 }
 
-
-
-/* CONTACT INFO */
 
 .contact-info {
 
@@ -57,14 +48,13 @@ nav {
 
     color:white;
     text-decoration:none;
-    font-size:14px;
 
 }
 
 
 .social-icons img {
 
-    height:20px;
+    width:22px;
     margin:5px;
 
 }
@@ -80,7 +70,6 @@ nav {
 }
 
 
-
 /* MENU */
 
 .menu-items a {
@@ -89,50 +78,47 @@ nav {
     text-decoration:none;
 
     margin-left:25px;
+
     font-weight:bold;
 
 }
 
-
-
-/* HAMBURGER */
 
 .hamburger {
 
     display:none;
 
     color:white;
-    font-size:30px;
+
+    font-size:28px;
+
     cursor:pointer;
 
 }
 
 
 
-/* FORM */
+/* FORMULARI */
 
 .contact-container {
 
-
     max-width:600px;
 
-    margin:50px auto;
-
     background:white;
+
+    margin:50px auto;
 
     padding:35px;
 
     border-radius:12px;
 
-    box-shadow:
-    0 4px 15px rgba(0,0,0,.15);
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 
 }
 
 
 
 .contact-container h2 {
-
 
     text-align:center;
 
@@ -164,11 +150,20 @@ textarea {
 
     margin-top:5px;
 
-    border-radius:6px;
-
     border:1px solid #ccc;
 
+    border-radius:6px;
+
     box-sizing:border-box;
+
+
+}
+
+
+
+textarea {
+
+    resize:none;
 
 }
 
@@ -177,28 +172,32 @@ textarea {
 button {
 
 
-    margin-top:20px;
-
     width:100%;
 
+    margin-top:20px;
+
     padding:14px;
+
 
     background:#c40000;
 
     color:white;
 
+
     border:none;
 
     border-radius:7px;
+
 
     font-size:16px;
 
     font-weight:bold;
 
+
     cursor:pointer;
 
-}
 
+}
 
 
 button:hover {
@@ -211,33 +210,31 @@ button:hover {
 
 #status {
 
+    text-align:center;
 
-text-align:center;
+    margin-top:15px;
 
-margin-top:15px;
-
-font-weight:bold;
-
+    font-weight:bold;
 
 }
+
 
 
 
 footer {
 
+    background:#900000;
 
-background:#900000;
+    color:white;
 
-color:white;
+    text-align:center;
 
-text-align:center;
+    padding:20px;
 
-padding:20px;
-
-margin-top:50px;
-
+    margin-top:50px;
 
 }
+
 
 
 
@@ -267,6 +264,7 @@ padding:15px;
 }
 
 
+
 .menu-items.show {
 
 
@@ -294,7 +292,6 @@ display:block;
 }
 
 
-
 }
 
 </style>
@@ -307,14 +304,14 @@ display:block;
 <body>
 
 
-
 <nav>
 
 
 <div class="contact-info">
 
 
-📞 
+📞
+
 <a href="https://wa.me/355674375818">
 
 +355 67 437 5818
@@ -360,6 +357,7 @@ pavaresia.shkolla@gmail.com
 
 
 
+
 <div class="logo">
 
 <img src="images/Picture1.png">
@@ -375,7 +373,6 @@ pavaresia.shkolla@gmail.com
 ☰
 
 </div>
-
 
 
 
@@ -404,7 +401,6 @@ Kontakt
 
 
 </div>
-
 
 
 </nav>
@@ -436,6 +432,7 @@ required>
 
 
 
+
 <label>
 Mbiemri
 </label>
@@ -452,8 +449,7 @@ required>
 Email
 </label>
 
-
-<input
+<input 
 type="email"
 id="email"
 required>
@@ -465,8 +461,7 @@ required>
 Numër telefoni
 </label>
 
-
-<input
+<input 
 type="tel"
 id="telefon"
 required>
@@ -479,15 +474,10 @@ Mesazhi / Komenti
 </label>
 
 
-<textarea
-
+<textarea 
 id="mesazhi"
-
 rows="6"
-
-required>
-
-</textarea>
+required></textarea>
 
 
 
@@ -503,6 +493,7 @@ Dërgo Mesazhin
 <p id="status"></p>
 
 
+
 </form>
 
 
@@ -514,9 +505,7 @@ Dërgo Mesazhin
 
 <footer>
 
-
 © 2026 Shkolla Pavarësia - Të gjitha të drejtat e rezervuara
-
 
 </footer>
 
@@ -533,10 +522,13 @@ document
 .querySelector(".menu-items")
 .classList.toggle("show");
 
-
 }
 
 
+
+
+
+const API_URL = "https://ADRESA-JOTE-RENDER.com/contact";
 
 
 
@@ -549,7 +541,7 @@ e.preventDefault();
 
 
 
-let status =
+const status =
 document.getElementById("status");
 
 
@@ -559,7 +551,8 @@ status.innerHTML =
 
 
 
-let data={
+
+const data = {
 
 
 emri:
@@ -590,38 +583,30 @@ document.getElementById("mesazhi").value
 try {
 
 
-let response =
-await fetch(
-
-"https://ADRESA-JOTE-E-RENDER.com/contact",
-
-{
+const response = await fetch(API_URL, {
 
 
 method:"POST",
 
+
 headers:{
 
+
 "Content-Type":"application/json"
+
 
 },
 
 
-body:
-
-JSON.stringify(data)
+body:JSON.stringify(data)
 
 
-}
-
-);
+});
 
 
 
+const result = await response.json();
 
-
-let result =
-await response.json();
 
 
 
@@ -644,7 +629,7 @@ else{
 
 
 status.innerHTML =
-"❌ Gabim gjatë dërgimit";
+"❌ Ndodhi një gabim gjatë dërgimit";
 
 
 }
@@ -667,8 +652,8 @@ status.innerHTML =
 });
 
 
-</script>
 
+</script>
 
 
 </body>
